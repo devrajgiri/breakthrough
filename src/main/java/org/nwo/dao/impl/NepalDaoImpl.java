@@ -25,7 +25,7 @@ public class NepalDaoImpl implements NepalDao {
 	@Override
 	public List<Nepal> searchByItem(String item, String city, String location) {
 		Session session = sessionFactory.getCurrentSession();
-		String sql="select * FROM nepal  where CONCAT_WS('', item1, item2, item3, item4,"
+		String sql="select * FROM Nepal  where CONCAT_WS('', item1, item2, item3, item4,"
 						+"item5, item6,item7, item8) LIKE '%"+item+"%'";						
 		List<Nepal> nepal = session.createNativeQuery(sql,Nepal.class).getResultList();
 				return nepal;
