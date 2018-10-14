@@ -34,8 +34,8 @@ public class HibernateConf {
    public DataSource dataSource() {
 		HikariConfig hikariConfig = new HikariConfig();
 		hikariConfig.setDriverClassName("com.mysql.cj.jdbc.Driver");
-		hikariConfig.setJdbcUrl("jdbc:mysql://localhost:3306/nwo?useSSL=false");
-		hikariConfig.setUsername("root");
+		hikariConfig.setJdbcUrl("jdbc:mysql://jws-app-mysql/nwo");
+		hikariConfig.setUsername("user");
 		hikariConfig.setPassword("located");
 		
 		hikariConfig.setMaximumPoolSize(5);
