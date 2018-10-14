@@ -83,9 +83,10 @@ public class LoginController {
 //		mailSender.send(email);
 //
 //		model.addAttribute("emailSent", "true");
-		model.addAttribute("user", user);
+		model.addAttribute("userCreated", true);
+		model.addAttribute("user",user);
 
-		return "fancy-login";
+		return "newuser";
 	}
 
 

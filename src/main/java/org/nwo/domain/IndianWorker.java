@@ -1,10 +1,16 @@
 package org.nwo.domain;
 
+import java.io.UnsupportedEncodingException;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Lob;
+import javax.persistence.Transient;
+
+import org.apache.commons.codec.binary.Base64;
 
 @Entity
 public class IndianWorker {
@@ -30,6 +36,14 @@ public class IndianWorker {
 	
 	private String item2;
 
+	 @Lob
+	 @Column(name="imgfile", nullable=false, columnDefinition="mediumblob")
+	 private byte[] image;
+	
+	 @Transient
+		private String imgUtility;
+
+	
 	public int getId() {
 		return id;
 	}
@@ -38,6 +52,26 @@ public class IndianWorker {
 		this.id = id;
 	}
 
+
+	
+	public byte[] getImage() {
+		return image;
+	}
+
+	public void setImage(byte[] image) {
+		this.image = image;
+	}
+	
+	
+
+	public String getImgUtility() throws UnsupportedEncodingException {
+		
+		byte[] encodeBase64 = Base64.encodeBase64(getImage());
+		 String base64Encoded = new String(encodeBase64, "UTF-8");   		    
+		return base64Encoded;
+	}
+
+	
 	public int getUserId() {
 		return userId;
 	}

@@ -26,8 +26,7 @@ public class IndiaDaoImpl implements IndiaDao {
 	@Override
 	public List<India> searchByItem(String item, String city, String location) {
 		Session session = sessionFactory.getCurrentSession();
-		String sql="select * FROM india  where CONCAT_WS('', item1, item2, item3, item4,"
-						+"item5, item6,item7, item8) LIKE '%"+item+"%'";						
+		String sql="select * FROM India  where CONCAT_WS('', item1, item2, item3, item4) LIKE '%"+item+"%'";						
 		List<India> india = session.createNativeQuery(sql,India.class).getResultList();
 				return india;
 		}

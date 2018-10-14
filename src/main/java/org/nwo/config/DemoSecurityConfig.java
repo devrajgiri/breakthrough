@@ -55,6 +55,7 @@ public class DemoSecurityConfig extends WebSecurityConfigurerAdapter {
 			"/item",
 			"/worker",
 			"/newuser",
+			"/about",
 	};
 
 	

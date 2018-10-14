@@ -41,15 +41,11 @@
 			    <div class="container">
 			    	<div class="row align-items-center justify-content-between d-flex">
 				      <div id="logo">
-				        <a href="index.html"><img src="${pageContext.request.contextPath}/resources/img/logo.png" alt="" title="" /></a>
+				        <a href="#"><img src="${pageContext.request.contextPath}/resources/img/logo.png" alt="" title="" /></a>
 				      </div>
 				      <nav id="nav-menu-container">
 				        <ul class="nav-menu">
 				          <li class="menu-active"><a href="${pageContext.request.contextPath}/">Home</a></li>
-				          <li><a href="about-us.html">About Us</a></li>
-				          <li><a href="category.html">Category</a></li>
-				          <li><a href="price.html">Price</a></li>
-				          <li><a href="blog-home.html">Blog</a></li>
 				          <li><a href="${pageContext.request.contextPath}/logout">Logout</a></li>
 				        </ul>
 				      </nav><!-- #nav-menu-container -->		    		

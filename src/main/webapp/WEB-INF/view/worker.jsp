@@ -107,11 +107,10 @@
 					<ul class="nav-menu">
 						<li class="menu-active"><a
 							href="${pageContext.request.contextPath}/">Home</a></li>
-						<li><a href="about-us.html">About Us</a></li>
-						<li><a href="category.html">Category</a></li>
-						<li><a href="price.html">Price</a></li>
-						<li><a href="blog-home.html">Blog</a></li>
-						<li><a href="contact.html">Contact</a></li>
+						<li><a href="${pageContext.request.contextPath}/about">About
+								Us</a></li>
+						<li><a href="${pageContext.request.contextPath}/">Signup</a></li>
+						<li><a href="${pageContext.request.contextPath}/">Login</a></li>
 
 					</ul>
 				</nav>
@@ -164,7 +163,7 @@
 						<div class="row justify-content-center form-wrap">
 							<div class="col-lg-4 form-cols">
 								<input type="text" class="form-control" name="worker"
-									placeholder="what are you looking for? Eg. Shoes" required>
+									placeholder="You looking for? Eg. Taxi Driver" required>
 							</div>
 							<div class="col-lg-3 form-cols">
 								<div class="default-select" id="default-selects"">

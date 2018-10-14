@@ -25,8 +25,7 @@ public class AmericaDaoImpl implements AmericaDao {
 	@Override
 	public List<America> searchByItem(String item, String city, String location) {
 		Session session = sessionFactory.getCurrentSession();
-		String sql="select * FROM america  where CONCAT_WS('', item1, item2, item3, item4,"
-						+"item5, item6,item7, item8) LIKE '%"+item+"%'";						
+		String sql="select * FROM America  where CONCAT_WS('', item1, item2, item3, item4) LIKE '%"+item+"%'";						
 		List<America> america = session.createNativeQuery(sql,America.class).getResultList();
 				return america;
 }

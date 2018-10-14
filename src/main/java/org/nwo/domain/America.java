@@ -1,10 +1,16 @@
 package org.nwo.domain;
 
+import java.io.UnsupportedEncodingException;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Lob;
+import javax.persistence.Transient;
+
+import org.apache.commons.codec.binary.Base64;
 
 @Entity
 public class America {
@@ -35,17 +41,15 @@ public class America {
 	
 	private String item4;
 	
-	private String item5;
-	
-	private String item6;
-	
-	private String item7;
-	
-	private String item8;
-	
+	 @Lob
+	 @Column(name="imgfile", nullable=false, columnDefinition="mediumblob")
+	 private byte[] image;
 
+		@Transient
+		private String imgUtility;
 
-
+	
+	
 	public int getId() {
 		return id;
 	}
@@ -134,37 +138,22 @@ public class America {
 		this.item4 = item4;
 	}
 
-	public String getItem5() {
-		return item5;
+	public byte[] getImage() {
+		return image;
 	}
 
-	public void setItem5(String item5) {
-		this.item5 = item5;
-	}
-
-	public String getItem6() {
-		return item6;
-	}
-
-	public void setItem6(String item6) {
-		this.item6 = item6;
-	}
-
-	public String getItem7() {
-		return item7;
-	}
-
-	public void setItem7(String item7) {
-		this.item7 = item7;
+	public void setImage(byte[] image) {
+		this.image = image;
 	}
 	
-	public String getItem8() {
-		return item8;
+	
+
+	public String getImgUtility() throws UnsupportedEncodingException {
+		
+		byte[] encodeBase64 = Base64.encodeBase64(getImage());
+		 String base64Encoded = new String(encodeBase64, "UTF-8");   		    
+		return base64Encoded;
 	}
 
-	public void setItem8(String item8) {
-		this.item8 = item8;
-	}
-	
 
 }

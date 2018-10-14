@@ -25,7 +25,6 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.context.ContextLoader;
 import org.springframework.web.multipart.commons.CommonsMultipartFile;
 
 @Controller
@@ -48,6 +47,11 @@ public class DemoController {
 	@GetMapping("/")
 	public String showHome(Model model)  {
 		return "rome";
+	}
+	
+	@GetMapping("/about")
+	public String showAbout() {
+		return "about";
 	}
 	
 	@PostMapping("/insert")
@@ -79,10 +83,6 @@ public class DemoController {
 		nepal.setItem2(item2);
 		nepal.setItem3(item3);
 		nepal.setItem4(item4);
-		nepal.setItem5(item5);
-		nepal.setItem6(item6);
-		nepal.setItem7(item7);
-		nepal.setItem8(item8);
 		nepal.setImage(bytes);
 
 		searchService.saveNepal(nepal);
@@ -106,10 +106,7 @@ public class DemoController {
 			america.setItem2(item2);
 			america.setItem3(item3);
 			america.setItem4(item4);
-			america.setItem5(item5);
-			america.setItem6(item6);
-			america.setItem7(item7);
-			america.setItem8(item8);
+			america.setImage(bytes);
 
 			searchService.saveAmerica(america);
 			return "redirect:/";
@@ -127,10 +124,7 @@ public class DemoController {
 			india.setItem2(item2);
 			india.setItem3(item3);
 			india.setItem4(item4);
-			india.setItem5(item5);
-			india.setItem6(item6);
-			india.setItem7(item7);
-			india.setItem8(item8);
+			india.setImage(bytes);
 
 			searchService.saveIndia(india);
 			return "redirect:/";
@@ -144,6 +138,7 @@ public class DemoController {
 	public String insertItems(HttpServletRequest request,
 			@ModelAttribute("userid") int userid,
 			@ModelAttribute("country") String coun,
+			@RequestParam("file") CommonsMultipartFile imgFile,
 			@ModelAttribute("city") String city,
 			@ModelAttribute("location") String location,
 			@ModelAttribute("worker") String worker,
@@ -151,6 +146,7 @@ public class DemoController {
 			@ModelAttribute("item1") String item1,
 			@ModelAttribute("item2") String item2, Model model) throws Exception {
 
+		byte[] bytes = imgFile.getBytes();
 		
 	if(coun.equals("Nepal")) {
 		
@@ -163,6 +159,7 @@ public class DemoController {
 		nepalWorker.setWebsite(web);
 		nepalWorker.setItem1(item1);
 		nepalWorker.setItem2(item2);
+		nepalWorker.setImage(bytes);
 
 		workService.save(nepalWorker);
 		return "redirect:/";
@@ -178,6 +175,7 @@ public class DemoController {
 			americanWorker.setWebsite(web);
 			americanWorker.setItem1(item1);
 			americanWorker.setItem2(item2);
+			americanWorker.setImage(bytes);
 
 			workService.save(americanWorker);
 			return "redirect:/";
@@ -193,7 +191,9 @@ public class DemoController {
 			indianWorker.setWebsite(web);
 			indianWorker.setItem1(item1);
 			indianWorker.setItem2(item2);
-
+			indianWorker.setImage(bytes);
+			
+			
 			workService.save(indianWorker);
 			return "redirect:/";
 
@@ -233,6 +233,8 @@ public class DemoController {
 		if(country.equals("America")) {
 			List<America> america = new ArrayList<>();
 			america = searchService.searchByUsa(item, city, location);
+			int count = america.size();
+			model.addAttribute("count",count);
 			model.addAttribute("local",america);
 			return "search";
 		}
@@ -241,6 +243,8 @@ public class DemoController {
 		{
 			List<India> india = new ArrayList<>();
 			india = searchService.searchByIndia(item, city, location);
+			int count = india.size();
+			model.addAttribute("count",count);
 			model.addAttribute("local", india);
 			return "search";
 		}
@@ -258,6 +262,8 @@ public class DemoController {
 		if(country.equals("Nepal")) {
 			List<NepalWorker> nepal = new ArrayList<>();
 			nepal = workService.searchByItemNepal(item, city, location);
+			int count = nepal.size();
+			model.addAttribute("count",count);
 			model.addAttribute("local",nepal);
 		return "wsearch";
 		}
@@ -265,6 +271,8 @@ public class DemoController {
 		if(country.equals("America")) {
 			List<AmericanWorker> america = new ArrayList<>();
 			america = workService.searchByItemAmerica(item, city, location);
+			int count = america.size();
+			model.addAttribute("count",count);
 			model.addAttribute("local",america);
 			return "wsearch";
 		}
@@ -273,6 +281,8 @@ public class DemoController {
 		{
 			List<IndianWorker> india = new ArrayList<>();
 			india =workService.searchByItemIndia(item, city, location);
+			int count = india.size();
+			model.addAttribute("count",count);
 			model.addAttribute("local", india);
 			return "wsearch";
 		}

@@ -21,10 +21,10 @@
 <!-- Site Title -->
 <title>Job Listing</title>
 
-<!-- <link
+<link
 	href="https://fonts.googleapis.com/css?family=Poppins:100,200,400,300,500,600,700"
 	rel="stylesheet">
- --><!--
+<!--
 			CSS
 			============================================= -->
 <link rel="stylesheet"
@@ -69,18 +69,6 @@
 	}
 </script>
 
-<script>
-	var modal = document.getElementById('id03');
-
-	// When the user clicks anywhere outside of the modal, close it
-	window.onclick = function(event) {
-		if (event.target == modal) {
-			modal.style.display = "none";
-		}
-	}
-</script>
-
-
 </head>
 <body>
 
@@ -95,9 +83,9 @@
 				<nav id="nav-menu-container">
 					<ul class="nav-menu">
 						<li class="menu-active"><a href="${pageContext.request.contextPath}/">Home</a></li>
-						  <li><a href="${pageContext.request.contextPath}/about">About Us</a></li>
-				          <li><a href="${pageContext.request.contextPath}/about">Contact Us</a></li>
-				      <li><a href="${pageContext.request.contextPath}/newuser">Register/SignUp?</a></li>
+						<li><a href="#">About Us</a></li>
+						  <li><a href="${pageContext.request.contextPath}/about">Contact Us</a></li>
+				        <li><a href="${pageContext.request.contextPath}/newuser">Register / SignUp?</a></li>
 
 					</ul>
 				</nav>
@@ -112,246 +100,26 @@
 
 
 
-
 	<!-- start banner Area -->
 	<section class="banner-area relative" id="home">
 		<div class="overlay overlay-bg"></div>
 		<div class="container">
-
-
-
-
-
 			<div
 				class="row fullscreen d-flex align-items-center justify-content-center">
-				<div class="banner-content col-lg-10">
-
-
-					<div class="serach-form-area">
-						<div class="row justify-content-center form-wrap">
-							
-
-
-							
-							<div class="col-lg-5 form-cols">
-								<a href="${pageContext.request.contextPath}/searchitem"
-									class="btn btn-info lnr lnr-magnifier">Search Items</a>
-							</div>
-							
-							<div class="col-lg-5 form-cols">
-								<a href="${pageContext.request.contextPath}/searchworker"
-									class="btn btn-info lnr lnr-magnifier">Search Workers</a>
-							</div>
-		
-						</div>
-					</div>
-
-
-					<p class="text-white">
-
-							<c:if test="${param.error != null}">
-
-							<h5 style="color:white; font-family:Georgia; font-style:italic;">Wrong Username/Password!</h5>
-
-							</c:if>
-					</p>
-					<button class="login"
-						onclick="document.getElementById('id02').style.display='block'">Login
-					</button>
-
-					<a type="button" class="login"
-						href="${pageContext.request.contextPath}/newuser">Sign
-						Up?</a>
-
-
-
-					<div id="id02" class="modal1" align="center">
-
-						<form class="modal-content animate"
-							action="${pageContext.request.contextPath}/LoginPage"
-							method="POST" class="form-horizontal">
-
-
-
-
-							<div class="container1">
-								<label for="uname">Username</label> <input type="text"
-									placeholder="Enter Username" class="input1" name="username"
-									pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$"
-									title="Must contain in the format example@domain.com"
-									required> 
-									
-									
-									<label for="psw"><b>Password</b></label> <input
-									type="password" placeholder="Enter Password" class="input1"
-									name="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
-									title="Must be of 8 character with atleast one uppercase letter and number"
-									>
-
-								<button type="submit">Login</button>
-								<label> <input type="checkbox" checked="checked"
-									name="remember"> Remember me
-								</label>
-							</div>
-
-							<div class="container1" style="background-color: #f1f1f1">
-								<button type="button"
-									onclick="document.getElementById('id02').style.display='none'"
-									class="cancelbtn1">Cancel</button>
-								<span class="psw">Forgot <a href="#">password?</a></span>
-							</div>
-							<input type="hidden" name="${_csrf.parameterName}"
-								value="${_csrf.token}" />
-
-						</form>
-					</div>
-
-					<div id="id03" class="modal1">
-
-						<form class="modal-content animate"
-							action="${pageContext.request.contextPath}/create" method="POST"
-							class="form-horizontal">
-
-							<div class="container1">
-								<label for="uname">Username</label> <input type="text"
-									placeholder="Enter Username" class="input1" name="username"
-									pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$"
-									title="Must contain in the format example@domain.com"
-									required> 
-									
-									
-									<label for="psw"><b>Password</b></label> <input
-									type="password" placeholder="Enter Password" class="input1"
-									name="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
-									title="Must be of 8 character with atleast one uppercase letter and one number">
-
-								<button type="submit" >Sign Up</button>
-							</div>
-
-							<div class="container1" style="background-color: #f1f1f1">
-								<button type="button"
-									onclick="document.getElementById('id03').style.display='none'">Cancel</button>
-							</div>
-							<input type="hidden" name="${_csrf.parameterName}"
-								value="${_csrf.token}" />
-
-						</form>
-					</div>
-
-
-
+				<div class="banner-content col-lg-12">
+					<h3 class="text-white">
+						<span>This web page is created by<b>Devraj Giri</b> </span> as a work project
+					</h3>
 				</div>
-
 			</div>
 		</div>
-
-
-
-
 	</section>
 	<!-- End banner Area -->
 
 
-	<!-- Start popular-post Area -->
-	<section class="popular-post-area pt-100">
-		<div class="container">
-			<div class="row align-items-center">
-				<div class="active-popular-post-carusel">
-					<div class="single-popular-post d-flex flex-row">
-						<div class="thumb">
-							<img class="img-fluid"
-								src="${pageContext.request.contextPath}/resources/img/p1.png"
-								alt=""> <a class="btns text-uppercase" href="#">view
-								job post</a>
-						</div>
-						<div class="details">
-							<a href="#"><h4>Creative Designer</h4></a>
-							<h6>Los Angeles</h6>
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-								sed do eiusmod temporinc ididunt ut labore et dolore magna
-								aliqua. Ut enim ad minim veniam quis.</p>
-						</div>
-					</div>
-					<div class="single-popular-post d-flex flex-row">
-						<div class="thumb">
-							<img
-								src="${pageContext.request.contextPath}/resources/img/p2.png"
-								alt=""> <a class="btns text-uppercase" href="#">view
-								job post</a>
-						</div>
-						<div class="details">
-							<a href="#"><h4>Creative Designer</h4></a>
-							<h6>Los Angeles</h6>
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-								sed do eiusmod temporinc ididunt ut labore et dolore magna
-								aliqua. Ut enim ad minim veniam quis.</p>
-						</div>
-					</div>
-					<div class="single-popular-post d-flex flex-row">
-						<div class="thumb">
-							<img
-								src="${pageContext.request.contextPath}/resources/img/p1.png"
-								alt=""> <a class="btns text-uppercase" href="#">view
-								job post</a>
-						</div>
-						<div class="details">
-							<a href="#"><h4>Creative Designer</h4></a>
-							<h6>Los Angeles</h6>
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-								sed do eiusmod temporinc ididunt ut labore et dolore magna
-								aliqua. Ut enim ad minim veniam quis.</p>
-						</div>
-					</div>
-					<div class="single-popular-post d-flex flex-row">
-						<div class="thumb">
-							<img
-								src="${pageContext.request.contextPath}/resources/img/p2.png"
-								alt=""> <a class="btns text-uppercase" href="#">view
-								job post</a>
-						</div>
-						<div class="details">
-							<a href="#"><h4>Creative Designer</h4></a>
-							<h6>Los Angeles</h6>
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-								sed do eiusmod temporinc ididunt ut labore et dolore magna
-								aliqua. Ut enim ad minim veniam quis.</p>
-						</div>
-					</div>
-					<div class="single-popular-post d-flex flex-row">
-						<div class="thumb">
-							<img
-								src="${pageContext.request.contextPath}/resources/img/p1.png"
-								alt=""> <a class="btns text-uppercase" href="#">view
-								job post</a>
-						</div>
-						<div class="details">
-							<a href="#"><h4>Creative Designer</h4></a>
-							<h6>Los Angeles</h6>
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-								sed do eiusmod temporinc ididunt ut labore et dolore magna
-								aliqua. Ut enim ad minim veniam quis.</p>
-						</div>
-					</div>
-					<div class="single-popular-post d-flex flex-row">
-						<div class="thumb">
-							<img
-								src="${pageContext.request.contextPath}/resources/img/p2.png"
-								alt=""> <a class="btns text-uppercase" href="#">view
-								job post</a>
-						</div>
-						<div class="details">
-							<a href="#"><h4>Creative Designer</h4></a>
-							<h6>Los Angeles</h6>
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-								sed do eiusmod temporinc ididunt ut labore et dolore magna
-								aliqua. Ut enim ad minim veniam quis.</p>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-	<!-- End popular-post Area -->
+
+
+
 
 	<!-- Start feature-cat Area -->
 	<section class="feature-cat-area pt-100" id="category">
@@ -529,6 +297,3 @@
 	<script src="${pageContext.request.contextPath}/resources/js/main.js"></script>
 </body>
 </html>
-
-
-

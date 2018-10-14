@@ -40,35 +40,41 @@
 			<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/owl.carousel.css">
 			<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/main.css">
 			<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/login.css">
+<link
+	href="https://cdnjs.cloudflare.com/ajax/libs/easy-autocomplete/1.3.5/easy-autocomplete.min.css"
+	rel="stylesheet" type="text/css">
+<script src="http://code.jquery.com/jquery-1.11.2.js"
+	integrity="sha256-WMJwNbei5YnfOX5dfgVCS5C4waqvc+/0fV7W2uy3DyU="
+	crossorigin="anonymous"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/easy-autocomplete/1.3.5/jquery.easy-autocomplete.min.js"
+	type="text/javascript"></script>
+
+
 		</head>
 		<body>
 
-			  <header id="header" id="home">
+  <header id="header" id="home" >
 			    <div class="container">
 			    	<div class="row align-items-center justify-content-between d-flex">
 				      <div id="logo">
-				        <a href="index.html"><img src="${pageContext.request.contextPath}/resources/img/logo.png" alt="" title="" /></a>
+				        <a href="#"><img src="${pageContext.request.contextPath}/resources/img/logo.png" alt="" title="" /></a>
 				      </div>
 				      <nav id="nav-menu-container">
 				        <ul class="nav-menu">
 				          <li class="menu-active"><a href="${pageContext.request.contextPath}/">Home</a></li>
-				          <li><a href="about-us.html">About Us</a></li>
-				          <li><a href="category.html">Category</a></li>
-				          <li><a href="price.html">Price</a></li>
-				          <li><a href="blog-home.html">Blog</a></li>
-				          <li><a href="contact.html">Contact</a></li>
-				              <li><a href="${pageContext.request.contextPath}/logout">Logout</a></li>  
+				          <li><a href="${pageContext.request.contextPath}/logout">Logout</a></li>
 				        </ul>
 				      </nav><!-- #nav-menu-container -->		    		
 			    	</div>
 			    </div>
+				
 			  </header><!-- #header -->
 
 
 			<!-- start banner Area -->
-			<section class="banner-area1 relative" id="home">	
+			<section class="submit-area section-gap1" id="home">	
 				<div class="overlay overlay-bg"></div>
-				<div class="container">
 					<div class="row d-flex align-items-center justify-content-center">
 						<div class="about-content col-lg-12">
 							<h1 class="text-white">
@@ -84,7 +90,7 @@
 
 <div class="form-group">
 
-      <label class="control-label col-sm-2" for="country">Country:</label>
+      <label class="control-label col-sm-2 text-white" for="country">Country:</label>
       <div class="col-sm-8">
 	<select name="country" class="form-control">
 		<option value="Nepal" >Nepal</option>
@@ -98,36 +104,48 @@
 
 
     <div class="form-group">
-      <label class="control-label col-sm-2" for="city">City:</label>
+      <label class="control-label col-sm-2 text-white" for="city">City:</label>
       <div class="col-sm-6">
-        <input type="text" class="form-control" id="city" placeholder="Enter city E.g: Lalitpur" name="city">
+        <input type="text" class="form-control" id="city" placeholder="Enter city E.g: Lalitpur" name="city" required>
       </div>
-      <div class="col-sm-3">      <input type="file"  name="file"></div>
+      <div class="col-sm-3">      <input type="file"  name="file" class="text-white" required></div>
   
     </div>
 
-
+					<script>
+								var options = {
+									url : "${pageContext.request.contextPath}/city",
+									getValue : "city",
+									list : {
+										match : {
+											enabled : true
+										}
+									}
+								};
+								$("#city").easyAutocomplete(options);
+							</script>
+	
     <div class="form-group">
-      <label class="control-label col-sm-2" for="location">Location:</label>
+      <label class="control-label col-sm-2 text-white" for="location" >Location:</label>
       <div class="col-sm-5">
       
-        <input type="text" class="form-control" id="location" placeholder="your location E.g: Gwarko" name="location">
+        <input type="text" class="form-control" id="location" placeholder="your location E.g: Gwarko" name="location" required>
               
       </div>
     </div>
 			
 	
     <div class="form-group">
-      <label class="control-label col-sm-2" for="seller">Seller name:</label>
+      <label class="control-label col-sm-2 text-white" for="seller">Seller name:</label>
       <div class="col-sm-5">
-        <input type="text" class="form-control" id="seller" placeholder="seller name" name="seller"><i>E.g:john doe</i>
+        <input type="text" class="form-control" id="seller" placeholder="E.g:john doe" name="seller" required>
       </div>
     </div>
 			
     <div class="form-group">
-      <label class="control-label col-sm-2" for="website">website:</label>
+      <label class="control-label col-sm-2 text-white" for="website">website:</label>
       <div class="col-sm-5">
-        <input type="text" class="form-control" id="web" placeholder="Enter website" name="web"><i>E.g: www.Lalitpur.com</i>
+        <input type="text" class="form-control" id="web" placeholder="E.g: www.Lalitpur.com" name="web">
       </div>
     </div>
 </div>			
@@ -135,29 +153,29 @@
  
  <div class="col-lg-6 col-xs-10">
     <div class="form-group">
-      <label class="control-label col-sm-5" for="item">Product:</label>
+      <label class="control-label col-sm-5 text-white" for="item">Product:</label>
       <div class="col-sm-5">
-        <input type="text" class="form-control" id="item1" placeholder="Enter city" name="item1"><i>E.g: Shoes</i>
+        <input type="text" class="form-control" id="item1" placeholder="E.g: Shoes" name="item1" required>
       </div>
     </div>
 
 
     <div class="form-group">
-      <label class="control-label col-sm-5" for="item">Product:</label>
+      <label class="control-label col-sm-5 text-white" for="item">Product:</label>
       <div class="col-sm-5">
-        <input type="text" class="form-control" id="item2" placeholder="Enter city" name="item2"><i>E.g: Shoes</i>
+        <input type="text" class="form-control" id="item2" placeholder="E.g: Shoes" name="item2">
       </div>
     </div>
 
     <div class="form-group product" style="display:none;">
-      <label class="control-label col-sm-5" for="item">Product:</label>
+      <label class="control-label col-sm-5 text-white" for="item">Product:</label>
       <div class="col-sm-5">
         <input type="text" class="form-control" id="item3" placeholder="Enter city" name="item3"><i>E.g: Shoes</i>
       </div>
     </div>
 
     <div class="form-group product"  style="display:none;">
-      <label class="control-label col-sm-5" for="item">Product:</label>
+      <label class="control-label col-sm-5 text-white" for="item">Product:</label>
       <div class="col-sm-5">
         <input type="text" class="form-control" id="item4" placeholder="Enter city" name="item4"><i>E.g: Shoes</i>
       </div>
@@ -218,23 +236,7 @@ $(document).ready(function(){
 								<h6>Newsletter</h6>
 								<p>You can trust us. we only send promo offers, not a single spam.</p>
 								<div id="mc_embed_signup">
-									<form target="_blank" novalidate="true" action="https://spondonit.us12.list-manage.com/subscribe/post?u=1462626880ade1ac87bd9c93a&amp;id=92a4423d01" method="get" class="form-inline">
-
-										<div class="form-group row" style="width: 100%">
-											<div class="col-lg-8 col-md-12">
-												<input name="EMAIL" placeholder="Enter Email" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Email '" required="" type="email">
-												<div style="position: absolute; left: -5000px;">
-													<input name="b_36c4fd991d266f23781ded980_aefe40901a" tabindex="-1" value="" type="text">
-												</div>
-											</div> 
-										
-											<div class="col-lg-4 col-md-12">
-												<button class="nw-btn primary-btn">Subscribe<span class="lnr lnr-arrow-right"></span></button>
-											</div> 
-										</div>		
-										<div class="info"></div>
-									</form>
-								</div>		
+															</div>		
 							</div>
 						</div>
 						<div class="col-lg-3  col-md-12">

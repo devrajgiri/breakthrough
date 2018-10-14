@@ -105,21 +105,12 @@
 				</div>
 				<nav id="nav-menu-container">
 					<ul class="nav-menu">
-						<li class="menu-active"><a href="index.html">Home</a></li>
-						<li><a href="about-us.html">About Us</a></li>
-						<li><a href="category.html">Category</a></li>
-						<li><a href="price.html">Price</a></li>
-						<li><a href="blog-home.html">Blog</a></li>
-						<li><a href="contact.html">Contact</a></li>
-
+						<li class="menu-active"><a href="${pageContext.request.contextPath}/">Home</a></li>
+						<li><a href="${pageContext.request.contextPath}/about">About Us</a></li>
+						<li class="menu-active"><a href="${pageContext.request.contextPath}/">Login/Sign Up</a></li>
 					</ul>
 				</nav>
 				<!-- #nav-menu-container -->
-
-
-
-
-
 
 				<div id="id01" class="modal3" align="center">
 

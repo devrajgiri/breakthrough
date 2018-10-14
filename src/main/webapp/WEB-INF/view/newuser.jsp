@@ -83,11 +83,7 @@
 				<nav id="nav-menu-container">
 					<ul class="nav-menu">
 						<li class="menu-active"><a href="${pageContext.request.contextPath}/">Home</a></li>
-						<li><a href="about-us.html">About Us</a></li>
-						<li><a href="category.html">Category</a></li>
-						<li><a href="price.html">Price</a></li>
-						<li><a href="blog-home.html">Blog</a></li>
-						<li><a href="contact.html">Contact</a></li>
+						<li><a href="${pageContext.request.contextPath}/about">About Us</a></li>
 						<li><a href="${pageContext.request.contextPath}/newuser">Register / SignUp?</a></li>
 
 					</ul>
@@ -127,10 +123,17 @@
 							<h5 style="color:red;">
 								<c:if test="${usernameExists== true}">
 
-							<p> Email Already taken, choose another one!!</p>
+							<p><i> Email Already taken, choose another one!!</i></p>
 							</c:if>
+							</h5>
 
+							<h5 style="color:blue;">
+								<c:if test="${userCreated== true}">
 
+							<p><i> Account created, Please Login to continue</i></p>
+							</c:if>
+							</h5>
+							
 							<div class="container1">
 								<label for="uname">Username</label> <input type="text"
 									placeholder="Enter Username" class="input1" name="username"

@@ -51,13 +51,9 @@
 				      <nav id="nav-menu-container">
 				        <ul class="nav-menu">
 				          <li class="menu-active"><a href="${pageContext.request.contextPath}/">Home</a></li>
-				          <li><a href="about-us.html">About Us</a></li>
-				          <li><a href="category.html">Category</a></li>
-				          <li><a href="price.html">Price</a></li>
-				          <li><a href="blog-home.html">Blog</a></li>
-				          <li><a href="contact.html">Contact</a></li>
-				          <li><a class="ticker-btn" href="#">Signup</a></li>
-				          <li><a class="ticker-btn" href="#">Login</a></li>				          				          
+				          <li><a href="#">About Us</a></li>
+				          <li><a  href="${pageContext.request.contextPath}/">Signup</a></li>
+				          <li><a  href="${pageContext.request.contextPath}/">Login</a></li>				          				          
 				        </ul>
 				      </nav><!-- #nav-menu-container -->		    		
 			    	</div>
@@ -143,28 +139,31 @@
 		
 							<div class="single-post d-flex ">
 								<div class="thumb">
+											<div class="col-lg-12">
 								<img src="data:image/jpeg;base64,${tempCustomer.imgUtility}"  height=100
 									width=100 alt="no data">
+								</div>
 								</div>
 								<div class="details">
 									<div class="title d-flex flex-row justify-content-between">
 										<div class="titles">
-											<a href="single.html"><h4>${tempCustomer.sellerName}</h4></a>
-											<h6>Premium Labels Limited</h6>					
-										</div>
-										<ul class="btns">
-											<li><a href="#"><span class="lnr lnr-heart"></span></a></li>
-											<li><a href="#">Apply</a></li>
-										</ul>
-									</div>
-									<p>
-										${tempCustomer.item1} 
-									</p>
-				
+											<a href="#"><h4 style="color:gray;">Seller Name: ${tempCustomer.sellerName}</h4></a>
+									
+									<p class="address">Country:<span> ${tempCustomer.country} </span></p>
+									<p class="address">City:<span> ${tempCustomer.city} </span></p>
+									<p class="address">Location:<span> ${tempCustomer.location} </span></p>
+									<br>
+											<h4 style="color:green;">Products:	 </h4>					
+									<p class="address"><span> ${tempCustomer.item1} </span></p>
+									<p class="address"><span> ${tempCustomer.item2} </span></p>
+									<p class="address"><span> ${tempCustomer.item3} </span></p>
+									<p class="address"><span> ${tempCustomer.item4}</span> </p>
 
-									<h5>Job Nature: Full time</h5>
-									<p class="address"><span class="lnr lnr-map"></span> ${tempCustomer.item2} </p>
-									<p class="address"><span class="lnr lnr-database"></span> ${tempCustomer.item3} </p>
+										</div>
+									</div>
+
+									<h5>Website: ${tempCustomer.website}</h5>
+									
 								</div>
 							</div>
 				</c:forEach>
@@ -305,22 +304,6 @@
 			</section>
 			<!-- End post Area -->
 
-			<!-- Start callto-action Area -->
-			<section class="callto-action-area section-gap">
-				<div class="container">
-					<div class="row d-flex justify-content-center">
-						<div class="menu-content col-lg-9">
-							<div class="title text-center">
-								<h1 class="mb-10 text-white">Join us today without any hesitation</h1>
-								<p class="text-white">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore  et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</p>
-								<a class="primary-btn" href="#">I am a Candidate</a>
-								<a class="primary-btn" href="#">Request Free Demo</a>
-							</div>
-						</div>
-					</div>	
-				</div>	
-			</section>
-			<!-- End calto-action Area -->			
 		
 			<!-- start footer Area -->		
 			<footer class="footer-area section-gap">
@@ -340,21 +323,11 @@
 						<div class="col-lg-6  col-md-12">
 							<div class="single-footer-widget newsletter">
 								<h6>Newsletter</h6>
-								<p>You can trust us. we only send promo offers, not a single spam.</p>
 								<div id="mc_embed_signup">
 									<form target="_blank" novalidate="true" action="https://spondonit.us12.list-manage.com/subscribe/post?u=1462626880ade1ac87bd9c93a&amp;id=92a4423d01" method="get" class="form-inline">
 
 										<div class="form-group row" style="width: 100%">
-											<div class="col-lg-8 col-md-12">
-												<input name="EMAIL" placeholder="Enter Email" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Email '" required="" type="email">
-												<div style="position: absolute; left: -5000px;">
-													<input name="b_36c4fd991d266f23781ded980_aefe40901a" tabindex="-1" value="" type="text">
-												</div>
-											</div> 
-										
-											<div class="col-lg-4 col-md-12">
-												<button class="nw-btn primary-btn">Subscribe<span class="lnr lnr-arrow-right"></span></button>
-											</div> 
+
 										</div>		
 										<div class="info"></div>
 									</form>

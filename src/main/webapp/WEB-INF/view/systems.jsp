@@ -39,50 +39,57 @@
 			<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/animate.min.css">
 			<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/owl.carousel.css">
 			<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/main.css">
+<link
+	href="https://cdnjs.cloudflare.com/ajax/libs/easy-autocomplete/1.3.5/easy-autocomplete.min.css"
+	rel="stylesheet" type="text/css">
+<script src="http://code.jquery.com/jquery-1.11.2.js"
+	integrity="sha256-WMJwNbei5YnfOX5dfgVCS5C4waqvc+/0fV7W2uy3DyU="
+	crossorigin="anonymous"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/easy-autocomplete/1.3.5/jquery.easy-autocomplete.min.js"
+	type="text/javascript"></script>
+
 		</head>
 		<body>
 
-			  <header id="header" id="home">
+		  <header id="header" id="home" >
 			    <div class="container">
 			    	<div class="row align-items-center justify-content-between d-flex">
 				      <div id="logo">
-				        <a href="index.html"><img src="${pageContext.request.contextPath}/resources/img/logo.png" alt="" title="" /></a>
+				        <a href="#"><img src="${pageContext.request.contextPath}/resources/img/logo.png" alt="" title="" /></a>
 				      </div>
 				      <nav id="nav-menu-container">
 				        <ul class="nav-menu">
 				          <li class="menu-active"><a href="${pageContext.request.contextPath}/">Home</a></li>
-				          <li><a href="about-us.html">About Us</a></li>
-				          <li><a href="category.html">Category</a></li>
-				          <li><a href="price.html">Price</a></li>
-				          <li><a href="blog-home.html">Blog</a></li>
-				          
-     <li><a href="${pageContext.request.contextPath}/logout">Logout</a></li>				        </ul>
+				          <li><a href="${pageContext.request.contextPath}/logout">Logout</a></li>
+				        </ul>
 				      </nav><!-- #nav-menu-container -->		    		
 			    	</div>
 			    </div>
+				
 			  </header><!-- #header -->
 
 
 			<!-- start banner Area -->
-			<section class="banner-area1 relative" id="home">	
+			<section class="submit-area section-gap1" id="home">	
 				<div class="overlay overlay-bg"></div>
 				<div class="container">
 					<div class="row d-flex align-items-center justify-content-center">
 						<div class="about-content col-lg-12">
-							<h1 class="text-white">
-								Contact Us				
-							</h1>	
+							<h3 class="text-white">
+								Insert Your Details				
+							</h3>	
 
 
 <div class="container">
-  	<form action="${pageContext.request.contextPath}/insertworker" method="POST" class="form-horizontal">
+  	<form action="${pageContext.request.contextPath}/insertworker" method="POST" class="form-horizontal" enctype="multipart/form-data">
 
 <input type="hidden" name="userid" value="<security:authentication property="principal.id"/>"/>
 <div class="form-group">
 
-      <label class="control-label col-sm-2" for="country">Country:</label>
+      <label class="control-label col-sm-2 text-white" for="country">Country:</label>
       <div class="col-sm-10">
-	<select name="country" class="form-control">
+	<select name="country" class="form-control" required>
 		<option value="Nepal" >Nepal</option>
 		<option value="America" >America</option>
 		<option value="India" >India</option>
@@ -94,48 +101,67 @@
 
 
     <div class="form-group">
-      <label class="control-label col-sm-2" for="city">City:</label>
+      <label class="control-label col-sm-2 text-white" for="city">City:</label>
       <div class="col-sm-10">
-        <input type="text" class="form-control" id="city" placeholder="Enter city" name="city"><i>E.g: Lalitpur</i>
+        <input type="text" class="form-control" id="city" placeholder="E.g: NewYork" name="city" required>
+      </div>
+    </div>
+				<script>
+								var options = {
+									url : "${pageContext.request.contextPath}/city",
+									getValue : "city",
+									list : {
+										match : {
+											enabled : true
+										}
+									}
+								};
+								$("#city").easyAutocomplete(options);
+							</script>
+	
+
+    <div class="form-group">
+      <label class="control-label col-sm-2 text-white" for="city">Select Image:</label>
+      <div class="col-sm-10">
+      <div class="col-sm-3">      <input type="file"  name="file" required></div>
       </div>
     </div>
 
-
     <div class="form-group">
-      <label class="control-label col-sm-2" for="location">Location:</label>
+      <label class="control-label col-sm-2 text-white" for="location">Location:</label>
       <div class="col-sm-10">
-        <input type="text" class="form-control" id="location" placeholder="Enter location" name="location"><i>E.g: Gwarko</i>
+        <input type="text" class="form-control" id="location" placeholder="E.g: Gwarko" name="location">
       </div>
     </div>
 			
 	
     <div class="form-group">
-      <label class="control-label col-sm-2" for="seller">Worker Name:</label>
+      <label class="control-label col-sm-2 text-white" for="seller">Worker Name:</label>
       <div class="col-sm-10">
-        <input type="text" class="form-control" id="workerr" placeholder="worker name" name="worker"><i>E.g:john doe</i>
+        <input type="text" class="form-control" id="worker" placeholder="E.g:john doe" name="worker" required>
       </div>
     </div>
 			
     <div class="form-group">
-      <label class="control-label col-sm-2" for="website">website:</label>
+      <label class="control-label col-sm-2 text-white" for="website">website:</label>
       <div class="col-sm-10">
-        <input type="text" class="form-control" id="web" placeholder="Enter website" name="web"><i>E.g: www.Lalitpur.com</i>
+        <input type="text" class="form-control" id="web" placeholder="E.g: www.Lalitpur.com" name="web" required>
       </div>
     </div>
 			
 
 
     <div class="form-group">
-      <label class="control-label col-sm-2" for="item">I will work as:</label>
+      <label class="control-label col-sm-2 text-white" for="item">I will work as:</label>
       <div class="col-sm-10">
-        <input type="text" class="form-control" id="item1" placeholder="Eg. taxi driver" name="item1">
+        <input type="text" class="form-control" id="item1" placeholder="Eg. taxi driver" name="item1" required>
       </div>
     </div>
 
     <div class="form-group">
-      <label class="control-label col-sm-2" for="item">I will work as:</label>
+      <label class="control-label col-sm-2 text-white" for="item">I will work as:</label>
       <div class="col-sm-10">
-        <input type="text" class="form-control" id="item2" placeholder="Eg. plumber" name="item2">
+        <input type="text" class="form-control" id="item2" placeholder="Eg. plumber" name="item2" required>
       </div>
     </div>
 

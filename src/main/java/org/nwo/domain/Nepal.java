@@ -48,13 +48,6 @@ public class Nepal {
 	
 	private String item4;
 	
-	private String item5;
-	
-	private String item6;
-	
-	private String item7;
-	
-	private String item8;
 	
 	@Transient
 	private String imgUtility;
@@ -165,38 +158,5 @@ public class Nepal {
 		this.item4 = item4;
 	}
 
-	public String getItem5() {
-		return item5;
-	}
-
-	public void setItem5(String item5) {
-		this.item5 = item5;
-	}
-
-	public String getItem6() {
-		return item6;
-	}
-
-	public void setItem6(String item6) {
-		this.item6 = item6;
-	}
-
-	public String getItem7() {
-		return item7;
-	}
-
-	public void setItem7(String item7) {
-		this.item7 = item7;
-	}
-	
-	public String getItem8() {
-		return item8;
-	}
-
-	public void setItem8(String item8) {
-		this.item8 = item8;
-	}
-	
-	
-	
+		
 }

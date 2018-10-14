@@ -33,7 +33,7 @@
 				<option value="lalitpur">Lalitpur</option>
 				<option value="kathmandu">kathmandu</option>
 				<option value="biratnagar">biratnagar</option>
-				<option value="dharan">dharan</option>
+				<option value="dharan">Dharan</option>
 				<option value="pokhara">pokhara</option>
 				<option value="ithari">ithari</option>
 				<option value="chitwan">chitwan</option>
